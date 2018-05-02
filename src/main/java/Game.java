@@ -23,6 +23,7 @@ public class Game {
     private void dealCards() {
         for (Player player : this.players){
             player.addCardtoHand(deck);
+            player.addCardtoHand(deck);
         }
     }
 
@@ -37,11 +38,21 @@ public class Game {
         return false;
     }
 
+//    public Player decideWinner(){
+//            if (this.players.get(0).valueOfCardInHand() > this.players.get(1).valueOfCardInHand()) {
+//                return this.players.get(0);
+//            } else if
+//                (this.players.get(0).valueOfCardInHand() < this.players.get(1).valueOfCardInHand()) {
+//                    return this.players.get(1);
+//                }
+//        return null;
+//    }
+
     public Player decideWinner(){
-            if (this.players.get(0).valueOfCardInHand() > this.players.get(1).valueOfCardInHand()) {
+            if (this.players.get(0).valueOfCardsInHand() > this.players.get(1).valueOfCardsInHand()) {
                 return this.players.get(0);
             } else if
-                (this.players.get(0).valueOfCardInHand() < this.players.get(1).valueOfCardInHand()) {
+                (this.players.get(0).valueOfCardsInHand() < this.players.get(1).valueOfCardsInHand()) {
                     return this.players.get(1);
                 }
         return null;
