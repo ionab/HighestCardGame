@@ -39,4 +39,12 @@ public class PlayerTest {
         int result = player.valueOfCardInHand();
         assertNotNull(result);
     }
+
+    @Test
+    public void hasAllCardValues() {
+        player.addCardtoHand(deck);
+        player.addCardtoHand(deck);
+        int result = player.valueOfCardsInHand();
+        assertNotNull(result);
+    }
 }

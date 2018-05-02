@@ -27,4 +27,7 @@ public class Player {
         return this.hand.get(0).getValueFromEnum();
     }
 
+    public int valueOfCardsInHand() {
+        return (this.hand.get(0).getValueFromEnum() + (this.hand.get(1).getValueFromEnum()));
+    }
 }
