@@ -37,13 +37,17 @@ public class Game {
         return false;
     }
 
-    public String decideWinner(){
+    public Player decideWinner(){
             if (this.players.get(0).valueOfCardInHand() > this.players.get(1).valueOfCardInHand()) {
-                return "Player 1 Wins";
+                return this.players.get(0);
             } else if
                 (this.players.get(0).valueOfCardInHand() < this.players.get(1).valueOfCardInHand()) {
-                    return "Player 2 Wins";
+                    return this.players.get(1);
                 }
-        return "Draw";
+        return null;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 }

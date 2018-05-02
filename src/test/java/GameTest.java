@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GameTest {
 
@@ -28,8 +29,8 @@ public class GameTest {
         assertEquals(true, game.playerHasCard(0));
     }
 
-    @Test
+    @Test //3% Chance of Draw/Fail
     public void gameHasWinner(){
-        assertEquals("Player 1 Wins", game.decideWinner());
+        assertTrue(game.getPlayers().contains(game.decideWinner()));
     }
 }
