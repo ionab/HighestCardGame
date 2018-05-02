@@ -2,11 +2,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class PlayerTest {
 
     Player player;
     Deck deck;
+    Card card;
 
     @Before
     public void before(){
@@ -21,13 +23,20 @@ public class PlayerTest {
 
     @Test
     public void handStartsEmpty(){
-        assertEquals(0, player.getCardsInHand());
+        assertEquals(0, player.getNumberOfCardsInHand());
     }
 
     @Test
     public void hasCardInHand(){
         player.addCardtoHand(deck);
         player.addCardtoHand(deck);
-        assertEquals(2, player.getCardsInHand());
+        assertEquals(2, player.getNumberOfCardsInHand());
+    }
+
+    @Test
+    public void hasCardValue() {
+        player.addCardtoHand(deck);
+        int result = player.valueOfCardInHand();
+        assertNotNull(result);
     }
 }

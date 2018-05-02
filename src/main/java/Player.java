@@ -14,7 +14,7 @@ public class Player {
         return this.name;
     }
 
-    public int getCardsInHand(){
+    public int getNumberOfCardsInHand(){
         return this.hand.size();
     }
 
@@ -23,5 +23,8 @@ public class Player {
         this.hand.add(card);
     }
 
+    public int valueOfCardInHand(){
+        return this.hand.get(0).getValueFromEnum();
+    }
 
 }
